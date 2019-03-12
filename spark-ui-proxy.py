@@ -47,7 +47,7 @@ class ProxyHandler(BaseHTTPRequestHandler):
         # redirect if we are hitting the home page
         if self.path in ["", URL_PREFIX]:
             self.send_response(302)
-            self.send_header("Location", URL_PREFIX + "proxy:" + SPARK_MASTER_HOST)
+            self.send_header("Location", URL_PREFIX + "proxy:" + SPARK_MASTER_HOST + "/")
             self.end_headers()
             return
         self.proxyRequest(None)
